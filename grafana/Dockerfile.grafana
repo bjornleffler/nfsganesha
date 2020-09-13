@@ -1,0 +1,16 @@
+FROM grafana/grafana
+
+MAINTAINER Bjorn Leffler "leffler@google.com"
+
+# Grafana Docker image with preconfigured Ganesha and systems consoles.
+#
+# To build:
+# docker build -t my_image_tag -f monitoring/Dockerfile.grafana  .
+#
+# To run:
+# docker run -d --restart=always --name grafana -p 3000:3000 my_image_tag
+
+ADD monitoring/datasource.yml /etc/grafana/provisioning/datasources/datasource.yml
+ADD monitoring/dashboard.yml /etc/grafana/provisioning/dashboards/dashboards.yml
+ADD monitoring/grafana.ganesha.dashboard.json /etc/grafana/provisioning/dashboards/grafana.ganesha.dashboard.json
+ADD monitoring/grafana.system.dashboard.json /etc/grafana/provisioning/dashboards/grafana.system.dashboard.json
