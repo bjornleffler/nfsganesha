@@ -5,7 +5,7 @@ MAINTAINER Bjorn Leffler "leffler@google.com"
 # Grafana Docker image with preconfigured Ganesha and systems consoles.
 #
 # To build:
-# docker build -t my_image_tag -f monitoring/Dockerfile.grafana  .
+# docker build -t my_image_tag -f Dockerfile.grafana  .
 #
 # To run:
 # docker run -d --restart=always --name grafana -p 3000:3000 my_image_tag
